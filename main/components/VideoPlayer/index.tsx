@@ -31,12 +31,11 @@ const VideoPlayer = (props: VideoPlayerProps) => {
    }, [episode])
    
   return (
-    <View>
       <Video
          ref={video}
          style={styles.video}
          source={{
-            uri: episode.video
+            uri: episode.video,
          }}
          posterSource={{
             uri: episode.poster
@@ -44,12 +43,11 @@ const VideoPlayer = (props: VideoPlayerProps) => {
          posterStyle={{
             resizeMode: 'cover'
          }}
-         usePoster={false}
+         usePoster={true}
          useNativeControls
          resizeMode='contain'
          onPlaybackStatusUpdate={status => setStatus(() => status)}
       />
-    </View>
   );
 };
 
